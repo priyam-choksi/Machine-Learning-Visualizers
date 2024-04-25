@@ -4,12 +4,52 @@ from matplotlib import pyplot as plt
 from sklearn.metrics import mean_squared_error
 from sklearn.linear_model import LinearRegression
 
+st.title("Interactive Linear Regression and MSE Exploration")
+
+# Introduction and Mathematical Background
+st.markdown("""
+## Introduction to Linear Regression
+Linear Regression is a fundamental statistical method used for modeling the relationship between a scalar dependent variable \( y \) and one or more explanatory variables (or independent variables) denoted \( X \). The key goal is to find a linear relationship between these variables which can be used for prediction.
+""")
+
+# Mathematical Formula of Linear Regression
+st.subheader("Mathematical Formulation")
+st.markdown("""
+The equation of a linear regression model is:
+""")
+st.latex(r'''
+y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n + \epsilon
+''')
+st.markdown("""
+Where:
+- \( \beta_0, \beta_1, ..., \beta_n \) are the coefficients of the model.
+- \( x_1, x_2, ..., x_n \) are the predictor variables.
+- \( \epsilon \) represents the error term, accounting for the variability in \( y \) not explained by the predictors.
+""")
+
+# Mean Squared Error (MSE) Explanation
+st.subheader("Mean Squared Error (MSE)")
+st.markdown("""
+MSE is a measure used to evaluate the performance of a regression model by calculating the average squared difference between the actual observed responses and the responses predicted by the model. The formula for MSE is:
+""")
+st.latex(r'''
+MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+''')
+st.markdown("""
+Where \( \hat{y}_i \) are the predicted values by the model.
+""")
 
 st.subheader("Linear Regression & MSE")
-
+# Sidebar for Configuration
+st.sidebar.header('Configure Parameters')
 num_features = st.sidebar.slider('Feature count', 1, 10, 1)
 num_samples = st.sidebar.slider('Sample count', 1, 100, 10)
 
+# Data Generation
+st.subheader("Data Preparation")
+st.markdown("""
+Synthetic data is generated here based on the specified number of features and samples to demonstrate the model's behavior under controlled conditions.
+""")
 np.random.seed(42)
 X = np.random.random_sample((num_samples, num_features))
 y = np.random.random_sample(num_samples)
@@ -19,7 +59,8 @@ intercept = linreg.intercept_
 coef = linreg.coef_
 y_pred = linreg.predict(X)
 mse = mean_squared_error(y, y_pred)
-
+# MSE Calculation and Display
+st.subheader("Performance Metrics")
 steps = np.array(list(range(-100, 110)))
 intercept_new = st.sidebar.select_slider("omega-0", steps / 10 * intercept, intercept, format_func=lambda x: "%.4f" %(x))
 coef_new = np.zeros(num_features)
