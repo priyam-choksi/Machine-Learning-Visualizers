@@ -1,26 +1,23 @@
 # Machine Learning Visualizers
 
-This repository contains a series of interactive Streamlit applications designed to visualize and explain different machine learning algorithms. Each application allows users to manipulate parameters and see the effects on the model in real-time.
+Welcome to the Machine Learning Visualizers repository! This collection of Streamlit applications is designed to demonstrate and explain various machine learning algorithms through interactive visualizations. Each app allows users to adjust parameters and see the effects on the model's performance and decision-making process in real time.
 
 ## Algorithms Covered
 
-- **Naive Bayes Classifier**: Understand the basics of Naive Bayes and see how it classifies data.
-- **K-Means Clustering**: Explore how K-Means clustering works and how it partitions the data into clusters.
-- **Linear Regression**: Visualize how Linear Regression models the relationship between variables.
-- **Random Forest Classifier**: Discover how Random Forest builds multiple decision trees and how it uses them for classification.
-- **Support Vector Machine (SVM)**: Learn about SVM and its capability to create non-linear decision boundaries using kernels.
-- **Principal Component Analysis (PCA)**: See how PCA reduces dimensionality while preserving variance.
+- **Naive Bayes Classifier**: Explore the basics of Naive Bayes and its application in classification tasks.
+- **K-Means Clustering**: Understand how K-Means clustering works to partition data into k clusters.
+- **Linear Regression**: Visualize the relationship between variables and how Linear Regression can be used to predict outcomes.
+- **Random Forest Classifier**: Learn about the ensemble approach using multiple decision trees to improve predictive accuracy.
+- **Support Vector Machine (SVM)**: Discover how SVM can be used for both linear and non-linear classification.
+- **Principal Component Analysis (PCA)**: See how PCA is used to reduce the dimensionality of data while preserving as much variance as possible.
+- **Neural Networks**: Dive into the workings of Neural Networks and see how they can model complex patterns in data.
 
-## Getting Started
+## Features
+
+- Interactive parameter tuning to visualize how each algorithm responds to changes.
+- Real-time updates to decision boundaries or outputs based on user input.
+- Visualization of key metrics and performance data.
 
 ### Prerequisites
 
 To run these applications, you'll need Python installed on your system. The applications also require several Python libraries, listed in `requirements.txt`.
-
-### Installation
-
-Clone this repository:
-
-```bash
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
